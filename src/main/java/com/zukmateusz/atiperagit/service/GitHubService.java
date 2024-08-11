@@ -18,7 +18,7 @@ import java.util.Objects;
 @Service
 public class GitHubService {
     private final RestTemplate restTemplate;
-    private final String userNotExistMessage = "given github user not existing ";
+    private final String userNotExistMessage = "given github user not existing";
 
     @Autowired
     public GitHubService(RestTemplate restTemplate) {

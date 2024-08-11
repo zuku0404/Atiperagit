@@ -59,7 +59,7 @@ including the branch name and last commit SHA.
         ```json
         {
          "status": 404,
-         "message": "Error occurred: Not Found"
+         "message": "given github user not existing"
         }
         ```
 ## Usage
