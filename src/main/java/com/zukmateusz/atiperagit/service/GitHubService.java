@@ -1,9 +1,9 @@
 package com.zukmateusz.atiperagit.service;
 
-import com.zukmateusz.atiperiagit.model.BranchInfo;
-import com.zukmateusz.atiperiagit.model.ErrorResponse;
-import com.zukmateusz.atiperiagit.model.RepositoryInfo;
-import com.zukmateusz.atiperiagit.model.RepositoryResponse;
+import com.zukmateusz.atiperagit.model.BranchInfo;
+import com.zukmateusz.atiperagit.model.ErrorResponse;
+import com.zukmateusz.atiperagit.model.RepositoryInfo;
+import com.zukmateusz.atiperagit.model.RepositoryResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
