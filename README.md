@@ -9,7 +9,7 @@ including the branch name and last commit SHA.
 1. Clone the repository:
    ```bash
    git clone https://github.com/zuku0404/Atiperagit.git
-       ```
+    ```
 2. Navigate to the project directory:
     ```bash
     cd Atiperagit
@@ -27,42 +27,50 @@ including the branch name and last commit SHA.
 
 ### Get Repositories for a User
 
-- **URL:** `/test/{username}`
+- **URL:** `/repositories/{username}`
 - **Method:** `GET`
 - **Headers:**
     - `Accept: application/json`
 - **Response:**
     - `200 OK` with the list of repositories (name, owner, branches, and last commit SHA).
-    - `404 Not Found` if the user does not exist.
-    - Example:
-      ```json
-      [
-          {
-              "repositoryInfo": {
-                  "name": "myRepo",
-                  "owner": {
-                      "login": "zuku0404"
-                  }
-              },
-              "branchInfo": [
-                  {
-                      "name": "main",
-                      "commit": {
-                          "sha": "7638417db6d59f3c431d3e1f261cc637155684cd"
+      * Example:
+        ```json
+          [
+              {
+                  "repositoryInfo": {
+                      "name": "myRepo",
+                      "owner": {
+                          "login": "zuku0404"
                       }
-                  }
-              ]
-          }
-      ]
+                  },
+                  "branchInfo": [
+                      {
+                          "name": "main",
+                          "commit": {
+                              "sha": "7638417db6d59f3c431d3e1f261cc637155684cd"
+                          }
+                      }
+                  ]
+              }
+          ]
+          ```
+    - `404 Not Found` if the user does not exist.
+      * Example:
+        ```json
+        {
+         "status": 404,
+         "message": "Error occurred: Not Found"
+        }
+        ```
 ## Usage
 
 Once the application is running, you can access the API at:
-http://localhost:8080/test/{username}
+http://localhost:8080/repositories/{username}
 
 Replace `{username}` with the GitHub username for which you want to retrieve repository information.
 
 Example request:
-http://localhost:8080/test/zuku0404
+http://localhost:8080/repositories/zuku0404
 
 ## Built With
 
