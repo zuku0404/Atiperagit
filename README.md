@@ -31,37 +31,35 @@ including the branch name and last commit SHA.
 - **Method:** `GET`
 - **Headers:**
     - `Accept: application/json`
-- **Response:**
-    - `200 OK` with the list of repositories (name, owner, branches, and last commit SHA).
-      * Example:
-        ```json
-          [
+      - **Response:**
+          - `200 OK` with the list of repositories (name, owner, branches, and last commit SHA).
+            * Example:
+              ```json
+                [
+                    {
+                        "name": "myRepo",
+                        "owner": {
+                            "login": "zuku0404"
+                        },
+                        "branchInfo": [
+                            {
+                                "name": "main",
+                                "commit": {
+                                    "sha": "7638417db6d59f3c431d3e1f261cc637155684cd"
+                                }
+                            }
+                        ]
+                    }
+                ]
+              ```
+          - `404 Not Found` if the user does not exist.
+            * Example:
+              ```json
               {
-                  "repositoryInfo": {
-                      "name": "myRepo",
-                      "owner": {
-                          "login": "zuku0404"
-                      }
-                  },
-                  "branchInfo": [
-                      {
-                          "name": "main",
-                          "commit": {
-                              "sha": "7638417db6d59f3c431d3e1f261cc637155684cd"
-                          }
-                      }
-                  ]
+               "status": 404,
+               "message": "given github user not existing"
               }
-          ]
-          ```
-    - `404 Not Found` if the user does not exist.
-      * Example:
-        ```json
-        {
-         "status": 404,
-         "message": "given github user not existing"
-        }
-        ```
+              ```
 ## Usage
 
 Once the application is running, you can access the API at:
